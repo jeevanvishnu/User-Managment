@@ -1,0 +1,14 @@
+<script>
+    const form = document.getElementById("myForm");
+     const inputField = document.getElementById("password");
+     const warningMessage = document.getElementById("warningMessage");
+
+     form.addEventListener("submit", function(event) {
+         if (inputField.value.length < 6) {
+             event.preventDefault(); // Prevent form submission
+             warningMessage.style.display = "inline"; // Show warning
+         } else {
+             warningMessage.style.display = "none"; // Hide warning
+         }
+     });
+</script>

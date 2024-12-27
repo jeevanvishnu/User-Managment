@@ -1,0 +1,61 @@
+<%- include('../layout/header.ejs') %>
+<h1 class="text-center mt-5">Edit User</h1>
+
+<div class="container mt-4">
+  <form
+    action=""
+    method="POST"
+    class="shadow p-4 rounded"
+    style="max-width: 600px; margin: auto; background-color: #f9f9f9"
+  >
+    <!-- Name Field -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="form-control"
+        value="<%= user.name %>"
+        placeholder="Enter Name"
+        required
+      />
+    </div>
+
+    <!-- Email Field -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="form-control"
+        value="<%= user.email %>"
+        placeholder="Enter Email"
+        required
+      />
+    </div>
+
+    <!-- Mobile Field -->
+    <div class="mb-3">
+      <label for="mobile" class="form-label">Mobile</label>
+      <input
+        type="text"
+        id="mobile"
+        name="mobile"
+        class="form-control"
+        value="<%= user.mobile %>"
+        placeholder="Enter Mobile Number"
+        required
+      />
+    </div>
+   <input type="hidden" name="id" value="<%= user._id %>">
+    <!-- Submit and Go Dashboard Buttons -->
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary btn-lg">Save Changes</button>
+      <a href="/admin/dashboard" class="btn btn-secondary btn-lg"
+        >Go to Dashboard</a
+      >
+    </div>
+  </form>
+</div>

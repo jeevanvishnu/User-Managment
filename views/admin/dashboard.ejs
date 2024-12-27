@@ -1,0 +1,56 @@
+<%- include('../layout/header.ejs') %>
+
+<h1 class="text-center mt-5">Admin Dashboard</h1>
+
+<!-- Search Bar and Add User Button -->
+
+<div class="container mt-4">
+    <form class="d-flex justify-content-between align-items-center">
+        <!-- Search Field -->
+        <div class="input-group" style="width: 60%;">
+            <input  type="text" id="search" name="search" class="form-control" placeholder="Search by Name or Email" style="box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+            <input type="submit" value="search"
+            class="btn btn-primary">
+        </div>
+ 
+        <!-- Add User Button -->
+        <a href="/admin/newuser" class="btn btn-success btn-lg" style="box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">+ Add New User</a>
+    </div>
+</div>
+
+<!-- User Table -->
+<div class="container mt-4">
+    <% if (user.length > 0) { %>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover shadow-sm rounded">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                        <th>Image</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (let i = 0; i < user.length; i++) { %>
+                        <tr>
+                            <td><%= user[i].name %></td>
+                            <td><%= user[i].email %></td>
+                            <td><%= user[i].mobile %></td>
+                            <td>
+                                <img src="/userImage/<%= user[i].image %>" alt="User Image" class="img-fluid rounded-circle" style="width: 50px; height: 50px;">
+                            </td>
+                            <td class="text-center">
+                                <a href="/admin/edituser?id=<%= user[i]._id %>" class="btn btn-warning btn-sm me-1">Edit</a>
+                                <a href="/admin/deleteuser?id=<%= user[i]._id %>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    <% } else { %>
+        <p class="text-center">User not found</p>
+    <% } %>
+</div>

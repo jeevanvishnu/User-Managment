@@ -1,0 +1,49 @@
+<%- include('../layout/header.ejs') %>
+
+<div class="container mt-5">
+  <!-- Welcome Message -->
+  <div class="text-center mb-4">
+    <h1 class="display-4 fs-2">Welcome, <%= admin.name %></h1>
+  </div>
+
+  <!-- Table for Admin Details -->
+  <div class="card">
+    <div class="card-header bg-primary text-white text-center">
+      <h2>Admin Details</h2>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <!-- Admin Image -->
+        <div class="col-md-4 text-center">
+          <img
+            src="/userImage/<%= admin.image %>"
+            alt="Admin Image"
+            class="rounded-circle img-thumbnail"
+            style="width: 150px; height: 150px"
+          />
+        </div>
+        <!-- Admin Details -->
+        <div class="col-md-8">
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <th class="bg-light">Email</th>
+                <td><%= admin.email %></td>
+              </tr>
+              <tr>
+                <th class="bg-light">Mobile</th>
+                <td><%= admin.mobile %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard and Logout Buttons -->
+  <div class="text-center mt-4">
+    <a href="/admin/dashboard" class="btn btn-primary btn-lg">Dashboard</a>
+    <a href="/admin/logout" class="btn btn-danger btn-lg">Logout</a>
+  </div>
+</div>

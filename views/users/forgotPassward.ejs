@@ -1,0 +1,12 @@
+<%- include('../layout/header.ejs') %>
+ 
+<h4 class="text-center" >Forgot Password</h4>
+<form action="" method="post">
+  <div class="mb-3 " style="border: 1px solid black ;width: 400px; margin: auto; height: 200px; margin-top: 40px;" >
+    <label for="exampleInputEmail1" class="form-label mt-4" style="padding-left: 10px ;">Enter a password</label>
+    <input name="password" style="border: 1px solid grey; width: 300px; margin-left: 10px;" type="password" class="form-control id="exampleInputEmail1" aria-describedby="emailHelp" required>
+    <input type="hidden" name="user_id" value="<%= user_id %>">
+    <button style="margin-left: 10px; margin-top: 20px;" type="submit" class ="btn btn-primary">Submit</button>
+  </div>
+
+  </form>

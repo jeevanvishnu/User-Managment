@@ -1,0 +1,18 @@
+<%- include('../layout/header.ejs') %>
+ 
+<h4 class="text-center" >Forgot </h4>
+<form action="/forgot" method="post">
+  <div class="mb-3 " style="border: 1px solid black ;width: 400px; margin: auto; height: 200px; margin-top: 40px;" >
+    <label for="exampleInputEmail1" class="form-label mt-4" style="padding-left: 10px ;">Email address</label>
+    <input name="email" style="border: 1px solid grey; width: 300px; margin-left: 10px;" type="email" class="form-control id="exampleInputEmail1" aria-describedby="emailHelp" required>
+    
+    <button style="margin-left: 10px; margin-top: 20px;" type="submit" class ="btn btn-primary">Submit</button>
+  </div>
+
+<% if(typeof message !== "undefined"){
+  %>
+  <p class="text-success text-center fs-6"><%=message%></p>
+  <%
+}
+ %>
+</form>
